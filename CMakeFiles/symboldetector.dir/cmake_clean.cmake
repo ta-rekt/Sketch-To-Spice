@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/symboldetector.dir/extractimages.cpp.o"
+  "CMakeFiles/symboldetector.dir/symboldetector.cpp.o"
   "symboldetector.pdb"
   "symboldetector"
 )

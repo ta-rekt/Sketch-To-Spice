@@ -57,27 +57,27 @@ include CMakeFiles/symboldetector.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/symboldetector.dir/flags.make
 
-CMakeFiles/symboldetector.dir/extractimages.cpp.o: CMakeFiles/symboldetector.dir/flags.make
-CMakeFiles/symboldetector.dir/extractimages.cpp.o: extractimages.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/symboldetector.dir/extractimages.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/symboldetector.dir/extractimages.cpp.o -c /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/extractimages.cpp
+CMakeFiles/symboldetector.dir/symboldetector.cpp.o: CMakeFiles/symboldetector.dir/flags.make
+CMakeFiles/symboldetector.dir/symboldetector.cpp.o: symboldetector.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/symboldetector.dir/symboldetector.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/symboldetector.dir/symboldetector.cpp.o -c /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/symboldetector.cpp
 
-CMakeFiles/symboldetector.dir/extractimages.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/symboldetector.dir/extractimages.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/extractimages.cpp > CMakeFiles/symboldetector.dir/extractimages.cpp.i
+CMakeFiles/symboldetector.dir/symboldetector.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/symboldetector.dir/symboldetector.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/symboldetector.cpp > CMakeFiles/symboldetector.dir/symboldetector.cpp.i
 
-CMakeFiles/symboldetector.dir/extractimages.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/symboldetector.dir/extractimages.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/extractimages.cpp -o CMakeFiles/symboldetector.dir/extractimages.cpp.s
+CMakeFiles/symboldetector.dir/symboldetector.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/symboldetector.dir/symboldetector.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/symboldetector.cpp -o CMakeFiles/symboldetector.dir/symboldetector.cpp.s
 
 # Object files for target symboldetector
 symboldetector_OBJECTS = \
-"CMakeFiles/symboldetector.dir/extractimages.cpp.o"
+"CMakeFiles/symboldetector.dir/symboldetector.cpp.o"
 
 # External object files for target symboldetector
 symboldetector_EXTERNAL_OBJECTS =
 
-symboldetector: CMakeFiles/symboldetector.dir/extractimages.cpp.o
+symboldetector: CMakeFiles/symboldetector.dir/symboldetector.cpp.o
 symboldetector: CMakeFiles/symboldetector.dir/build.make
 symboldetector: /usr/local/lib/libopencv_stitching.3.4.1.dylib
 symboldetector: /usr/local/lib/libopencv_superres.3.4.1.dylib

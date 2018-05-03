@@ -123,32 +123,32 @@ symboldetector/fast:
 	$(MAKE) -f CMakeFiles/symboldetector.dir/build.make CMakeFiles/symboldetector.dir/build
 .PHONY : symboldetector/fast
 
-extractimages.o: extractimages.cpp.o
+symboldetector.o: symboldetector.cpp.o
 
-.PHONY : extractimages.o
+.PHONY : symboldetector.o
 
 # target to build an object file
-extractimages.cpp.o:
-	$(MAKE) -f CMakeFiles/symboldetector.dir/build.make CMakeFiles/symboldetector.dir/extractimages.cpp.o
-.PHONY : extractimages.cpp.o
+symboldetector.cpp.o:
+	$(MAKE) -f CMakeFiles/symboldetector.dir/build.make CMakeFiles/symboldetector.dir/symboldetector.cpp.o
+.PHONY : symboldetector.cpp.o
 
-extractimages.i: extractimages.cpp.i
+symboldetector.i: symboldetector.cpp.i
 
-.PHONY : extractimages.i
+.PHONY : symboldetector.i
 
 # target to preprocess a source file
-extractimages.cpp.i:
-	$(MAKE) -f CMakeFiles/symboldetector.dir/build.make CMakeFiles/symboldetector.dir/extractimages.cpp.i
-.PHONY : extractimages.cpp.i
+symboldetector.cpp.i:
+	$(MAKE) -f CMakeFiles/symboldetector.dir/build.make CMakeFiles/symboldetector.dir/symboldetector.cpp.i
+.PHONY : symboldetector.cpp.i
 
-extractimages.s: extractimages.cpp.s
+symboldetector.s: symboldetector.cpp.s
 
-.PHONY : extractimages.s
+.PHONY : symboldetector.s
 
 # target to generate assembly for a file
-extractimages.cpp.s:
-	$(MAKE) -f CMakeFiles/symboldetector.dir/build.make CMakeFiles/symboldetector.dir/extractimages.cpp.s
-.PHONY : extractimages.cpp.s
+symboldetector.cpp.s:
+	$(MAKE) -f CMakeFiles/symboldetector.dir/build.make CMakeFiles/symboldetector.dir/symboldetector.cpp.s
+.PHONY : symboldetector.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... symboldetector"
-	@echo "... extractimages.o"
-	@echo "... extractimages.i"
-	@echo "... extractimages.s"
+	@echo "... symboldetector.o"
+	@echo "... symboldetector.i"
+	@echo "... symboldetector.s"
 .PHONY : help
 
 
