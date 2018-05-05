@@ -1,4 +1,15 @@
-//  this code chops an image of many sketched symbols into images that contain one image each
+//  This code chops an image of many sketched symbols used for training into images that contain one symbol each. Here are the different
+// steps taken:
+
+// 1 - the image is turned to grayscale and thresholded to remove the effect of uneven lighting
+// 2 - the image is blurred to facilitate detecting symbols from their contours
+// 3 - the contours are found
+// 4 - bounding boxes are found from the contours
+// 5 - the original image is cropped according to the bounding box of each component, and the new images are rescaled and exported in a folder
+
+//TODO
+// refactoring:
+// - remove everything in main that isn't main program flow, and put it in functions
 
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
@@ -11,6 +22,7 @@ Mat src;
 Mat src_gray;
 Mat src_flat;
 Mat src_blur;
+Mat src_crop;
 Mat output;
 string arg2;
 
@@ -38,7 +50,6 @@ int main( int argc, char** argv )
 
   //add a filtering stage to make the image b&w high contrast and flat --> adaptiveThreshold
   cvtColor( src, src_gray, COLOR_RGB2GRAY );
-
   adaptiveThreshold(src_gray, src_flat, param1, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY, 15, param2);
 
   imshow( "source_window", src_flat );
@@ -84,10 +95,12 @@ void thresh_callback(int, void* )
   {
     Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
     drawContours( drawing, contours_poly, (int)i, color, 1, 8, vector<Vec4i>(), 0, Point() );
-    if(norm(boundRect[i].tl() - boundRect[i].br()) > 40 && norm(boundRect[i].tl() - boundRect[i].br()) < 150)      //magic number
+    if(norm(boundRect[i].tl() - boundRect[i].br()) > 40 && norm(boundRect[i].tl() - boundRect[i].br()) < 350)      //magic number
     {
       rectangle( drawing, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0 );
-      output = src_flat(boundRect[i]);
+      src_crop = src_flat(boundRect[i]);    //crop out bounding boxes from thresholded image
+      Size dsize(200,200);
+      resize(src_crop, output, dsize, 0, 0, INTER_NEAREST);   //rescale cropped images to 100 x 25
       name =  arg2 + to_string(i) + ".png";
       path = arg2 + "/" + name;
       imwrite(path, output);
@@ -103,8 +116,8 @@ void writeToFile(string arg2, string path)
 {
   //write path and bounding box dimensions to info file
   int r, c;
-  r = output.rows;
-  c = output.cols;
+  r = output.rows - 1;
+  c = output.cols - 1;
   string command = "echo " + path + "  1  " + " 0 0 " + to_string(c) + " " + to_string(r) + " >> " + arg2 + "info.txt";
   const char* writeToInfoFile = command.c_str();
   system(writeToInfoFile);
