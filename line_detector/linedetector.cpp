@@ -10,6 +10,7 @@
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/imgproc.hpp"
+#include "circuit.h"
 #include <iostream>
 using namespace cv;
 using namespace std;
@@ -23,6 +24,7 @@ int param1 = 255;
 int param2 = 10;
 RNG rng(12345);
 void thresh_callback(int, void* );
+bool contourTouchesRect(vector<Point> & cont, Rect & rect);
 
 int main( int argc, char** argv )
 {
@@ -61,6 +63,29 @@ void thresh_callback(int, void* )
   vector<vector<Point> > contours;
   vector<Vec4i> hierarchy;
   threshold( src, src, thresh, 255, THRESH_BINARY );
+
+  //create some rectangles manually for now, later symboldetector will take care of it
+  //r1
+  Point r1tl(100, 30);
+  Point r1br(230, 85);
+  Rect R1(r1tl, r1br);
+
+  //v1
+  Point v1tl(10, 220);
+  Point v1br(70, 340);
+  Rect V1(v1tl, v1br);
+
+  Scalar color2 = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
+
+  // rectangle( src, r1tl, r1br, color2, 2, 8, 0 );
+  // rectangle( src, v1tl, v1br, color2, 2, 8, 0 );
+
+  //delete region inside rectangles
+  Mat roi = src(R1);
+  roi.setTo(Scalar(255, 255, 255));
+  roi = src(V1);
+  roi.setTo(Scalar(255, 255, 255));
+
   findContours( src, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE, Point(0, 0) );
   vector<vector<Point> > contours_poly( contours.size() );
   vector<Rect> boundRect( contours.size() );
@@ -69,6 +94,11 @@ void thresh_callback(int, void* )
   for( size_t i = 0; i < contours.size(); i++ )
   {
     approxPolyDP( contours[i], contours_poly[i], 3, true );
+
+    if(contourTouchesRect(contours[i], R1))
+      cout<<"contour touches R1"<<endl;
+    if(contourTouchesRect(contours[i], V1))
+      cout<<"contour touches V1"<<endl;
   }
 
   // draw the contours
@@ -80,21 +110,17 @@ void thresh_callback(int, void* )
     drawContours( src, contours_poly, (int)i, color, 2, 8, vector<Vec4i>(), 0, Point() );
   }
 
-  //create some rectangles manually for now, later symboldetector will take care of it
-  //r1
-  Point r1tl(100, 30);
-  Point r1br(230, 85);
-  Rect R1(r1tl, r1br);
-  //r2
-  //r3
-  //r4
-  //c1
-  //v1
-
-  Scalar color2 = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
-
-  rectangle( src, r1tl, r1br, color2, 2, 8, 0 );
-
   namedWindow( "Contours", WINDOW_AUTOSIZE );
   imshow( "Contours", src );
+}
+
+
+bool contourTouchesRect(vector<Point> & cont, Rect & rect)
+{
+  for( size_t i = 0; i < cont.size(); i++)
+  {
+    if(rect.contains(cont[i]))
+      return true;
+  }
+  return false;
 }
