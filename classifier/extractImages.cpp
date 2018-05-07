@@ -6,10 +6,7 @@
 // 3 - the contours are found
 // 4 - bounding boxes are found from the contours
 // 5 - the original image is cropped according to the bounding box of each component, and the new images are rescaled and exported in a folder
-
-//TODO
-// refactoring:
-// - remove everything in main that isn't main program flow, and put it in functions
+// 6 - info file and bg file are automatically generated to use with opencv_createsamples and opencv_traincascade
 
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
@@ -26,7 +23,7 @@ Mat src_crop;
 Mat output;
 string arg2;
 
-int thresh = 250;        //magic number
+int thresh = 250;
 int max_thresh = 255;
 int param1 = 255;
 int param2 = 8;
@@ -99,7 +96,7 @@ void thresh_callback(int, void* )
     {
       rectangle( drawing, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0 );
       src_crop = src_flat(boundRect[i]);    //crop out bounding boxes from thresholded image
-      Size dsize(60,35);
+      Size dsize(100, 25);
       resize(src_crop, output, dsize, 0, 0, INTER_NEAREST);   //rescale cropped images to 100 x 25
       name =  arg2 + to_string(i) + ".png";
       path = arg2 + "/" + name;

@@ -6,6 +6,7 @@
 #include <iostream>
 using namespace std;
 using namespace cv;
+//
 
 
 // detects symbols and
@@ -148,7 +149,4 @@ void findConnections(Mat src, vector<Rect> component_boxes, vector<string> & com
     Scalar color = Scalar(rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255));
     drawContours(src, contours_poly, (int)i, color, 2, 8, vector<Vec4i>(), 0, Point());
   }
-
-  namedWindow("Contours", WINDOW_AUTOSIZE);
-  imshow("Contours", src);
 }

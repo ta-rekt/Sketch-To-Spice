@@ -1,6 +1,0 @@
-test/test20.png 1 0 0 199 199
-test/test33.png 1 0 0 199 199
-test/test87.png 1 0 0 199 199
-test/test183.png 1 0 0 199 199
-test/test217.png 1 0 0 199 199
-test/test220.png 1 0 0 199 199

@@ -11,29 +11,6 @@
 using namespace std;
 using namespace cv;
 
-//function declarations
-// void detectAndDisplay(Mat frame,
-//   vector<CascadeClassifier> & cascades,
-//   vector<string> & cascade_names,
-//   vector<Rect> & component_boxes,
-//   vector<string> & component_names);
-//
-// void loadCascades(vector<CascadeClassifier> & cascades,
-//   vector<string> & cascade_names);
-//
-// void setupCascades();
-//
-// void findConnections(Mat src,
-//   vector<Rect> components,
-//   vector<string> & component_names);
-//
-// bool contourTouchesRect(vector<Point> & cont,
-//   Rect & rect);
-//
-// bool buildCircuit(vector<vector<Point> > & contours,
-//   vector<Rect> components,
-//   vector<string> & component_names,
-//   Circuit & circ);
 
 int main( int argc, const char** argv )
 {
@@ -103,14 +80,25 @@ int main( int argc, const char** argv )
         cout<<"it to a netlist. You can train your own classifier if you would like"<<endl;
         cout<<"to enable StS to recognize an additional component. Use the"<<endl;
         cout<<"Options command for instructions on how to do that."<<endl;
+        cout<<"WARNING: This is a trial version that can only detect resistors."<<endl;
       }
       else if (c == 'o' || c == 'O')
       {
         cout<<"Please enter a command:"<<endl;
         cout<<"T: Train new Classifier"<<endl;
         cout<<"B: Back"<<endl;
-        string str;
-        cin>>str;
+        char s;
+        cin>>s;
+        if (s == 'T' || s == 't')
+        {
+          cout<<"Enter path of classifier xml file. It should be contained in a folder"<<endl;
+          cout<<"called classifier inside the working directory."<<endl;
+          cout<<"Example: classifier/resistor_classifier/cascade.xml"<<endl;
+          string str2;
+          cin>>str2;
+          cascade_names.push_back(str2);
+        }
+
       }
       else
       {
