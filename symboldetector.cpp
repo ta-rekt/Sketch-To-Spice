@@ -80,6 +80,7 @@ int main( int argc, const char** argv )
         cout<<"it to a netlist. You can train your own classifier if you would like"<<endl;
         cout<<"to enable StS to recognize an additional component. Use the"<<endl;
         cout<<"Options command for instructions on how to do that."<<endl;
+        cout<<"The netlist appears as netlist.txt in the working directory."<<endl;
         cout<<"WARNING: This is a trial version that can only detect resistors."<<endl;
       }
       else if (c == 'o' || c == 'O')
