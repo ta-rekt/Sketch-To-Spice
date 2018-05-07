@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/circuit.cpp
+circuit.h
+/Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/circuit.h
+
+/Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/circuit.h
+iostream
+-
+fstream
+-
+vector
+-
+
+/Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/functions.h
+
 /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/symboldetector.cpp
 opencv2/objdetect.hpp
 /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/opencv2/objdetect.hpp
@@ -13,6 +27,10 @@ opencv2/highgui.hpp
 /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/opencv2/highgui.hpp
 opencv2/imgproc.hpp
 /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/opencv2/imgproc.hpp
+circuit.h
+/Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/circuit.h
+functions.h
+/Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/functions.h
 stdio.h
 -
 iostream

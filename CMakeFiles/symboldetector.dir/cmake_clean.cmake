@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/symboldetector.dir/symboldetector.cpp.o"
+  "CMakeFiles/symboldetector.dir/circuit.cpp.o"
   "symboldetector.pdb"
   "symboldetector"
 )

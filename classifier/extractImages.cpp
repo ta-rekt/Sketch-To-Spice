@@ -99,7 +99,7 @@ void thresh_callback(int, void* )
     {
       rectangle( drawing, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0 );
       src_crop = src_flat(boundRect[i]);    //crop out bounding boxes from thresholded image
-      Size dsize(200,200);
+      Size dsize(60,35);
       resize(src_crop, output, dsize, 0, 0, INTER_NEAREST);   //rescale cropped images to 100 x 25
       name =  arg2 + to_string(i) + ".png";
       path = arg2 + "/" + name;

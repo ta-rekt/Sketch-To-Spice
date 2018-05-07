@@ -123,6 +123,33 @@ linedetector/fast:
 	$(MAKE) -f CMakeFiles/linedetector.dir/build.make CMakeFiles/linedetector.dir/build
 .PHONY : linedetector/fast
 
+circuit.o: circuit.cpp.o
+
+.PHONY : circuit.o
+
+# target to build an object file
+circuit.cpp.o:
+	$(MAKE) -f CMakeFiles/linedetector.dir/build.make CMakeFiles/linedetector.dir/circuit.cpp.o
+.PHONY : circuit.cpp.o
+
+circuit.i: circuit.cpp.i
+
+.PHONY : circuit.i
+
+# target to preprocess a source file
+circuit.cpp.i:
+	$(MAKE) -f CMakeFiles/linedetector.dir/build.make CMakeFiles/linedetector.dir/circuit.cpp.i
+.PHONY : circuit.cpp.i
+
+circuit.s: circuit.cpp.s
+
+.PHONY : circuit.s
+
+# target to generate assembly for a file
+circuit.cpp.s:
+	$(MAKE) -f CMakeFiles/linedetector.dir/build.make CMakeFiles/linedetector.dir/circuit.cpp.s
+.PHONY : circuit.cpp.s
+
 linedetector.o: linedetector.cpp.o
 
 .PHONY : linedetector.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... linedetector"
+	@echo "... circuit.o"
+	@echo "... circuit.i"
+	@echo "... circuit.s"
 	@echo "... linedetector.o"
 	@echo "... linedetector.i"
 	@echo "... linedetector.s"

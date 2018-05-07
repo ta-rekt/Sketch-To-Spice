@@ -123,6 +123,33 @@ symboldetector/fast:
 	$(MAKE) -f CMakeFiles/symboldetector.dir/build.make CMakeFiles/symboldetector.dir/build
 .PHONY : symboldetector/fast
 
+circuit.o: circuit.cpp.o
+
+.PHONY : circuit.o
+
+# target to build an object file
+circuit.cpp.o:
+	$(MAKE) -f CMakeFiles/symboldetector.dir/build.make CMakeFiles/symboldetector.dir/circuit.cpp.o
+.PHONY : circuit.cpp.o
+
+circuit.i: circuit.cpp.i
+
+.PHONY : circuit.i
+
+# target to preprocess a source file
+circuit.cpp.i:
+	$(MAKE) -f CMakeFiles/symboldetector.dir/build.make CMakeFiles/symboldetector.dir/circuit.cpp.i
+.PHONY : circuit.cpp.i
+
+circuit.s: circuit.cpp.s
+
+.PHONY : circuit.s
+
+# target to generate assembly for a file
+circuit.cpp.s:
+	$(MAKE) -f CMakeFiles/symboldetector.dir/build.make CMakeFiles/symboldetector.dir/circuit.cpp.s
+.PHONY : circuit.cpp.s
+
 symboldetector.o: symboldetector.cpp.o
 
 .PHONY : symboldetector.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... symboldetector"
+	@echo "... circuit.o"
+	@echo "... circuit.i"
+	@echo "... circuit.s"
 	@echo "... symboldetector.o"
 	@echo "... symboldetector.i"
 	@echo "... symboldetector.s"
