@@ -14,7 +14,6 @@ using namespace std;
 struct Component
 {
   Component(){};
-  virtual void initializeName(){}
 
   string name;    // make this netlist format i.e. R1, V1. starting with the right letter
   int value, leftNode, rightNode;
@@ -28,22 +27,14 @@ struct Component
   }
 };
 
-// first letter of type has to be capitalized for netlist to recognize it
-#define COMP_DECLARE(type)\
-struct type: Component{\
-  void initializeName(int i){\
-    name = #type[0] + to_string(i);\
-  }\
-};\
-
 
 class Circuit
 {
 public:
   Circuit();
   void addComponent(Component & comp);
-  //void addSimulationOption(string opt);
   void printNetlist();
+  //void addSimulationOption(string opt);
 private:
   vector<Component> components;
   // vector<string> simulationOptions;

@@ -42,12 +42,12 @@ class Circuit
 public:
   Circuit();
   void addComponent(Component & comp);
-  void addSimulationOption(string opt);
+  // void addSimulationOption(string opt);
   void printNetlist();
 private:
   vector<Component> components;
-  vector<string> simulationOptions;
-  string simulationParameters;    // DC analysis example: Vin 0 5 0.1 Vdd 0 5 0.5
+  // vector<string> simulationOptions;
+  // string simulationParameters;    // DC analysis example: Vin 0 5 0.1 Vdd 0 5 0.5
 };
 
 

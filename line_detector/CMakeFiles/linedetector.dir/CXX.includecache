@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+/Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/line_detector/circuit.cpp
+circuit.h
+/Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/line_detector/circuit.h
+
+/Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/line_detector/circuit.h
+iostream
+-
+fstream
+-
+vector
+-
+
 /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/line_detector/linedetector.cpp
 opencv2/imgcodecs.hpp
 /Users/mbpr/Desktop/AUB/2017-2018/2017-2018Spring/EECE_437/Individual_Project/EECE-437-Individual-Project/line_detector/opencv2/imgcodecs.hpp

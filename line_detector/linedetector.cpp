@@ -37,6 +37,10 @@ int main( int argc, char** argv )
     return -1;
   }
 
+  vector<vector<Point> > contours;
+  vector<Vec4i> hierarchy;
+  vector<vector<Point> > contours_poly(contours.size());
+
   Size imageSize(600, 600);
   resize(src, src, imageSize, 0, 0, INTER_NEAREST);
 
@@ -50,7 +54,14 @@ int main( int argc, char** argv )
   const char* source_window = "Source";
   namedWindow( source_window, WINDOW_AUTOSIZE );
 
-  //findConnections(components);
+  findContours(src, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE, Point(0, 0));
+  for(size_t i = 0; i < contours.size(); i++)
+  {
+    approxPolyDP(contours[i], contours_poly[i], 3, true );
+    Scalar color = Scalar(rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255));
+    drawContours(src, contours_poly, (int)i, color, 2, 8, vector<Vec4i>(), 0, Point());
+  }
+  // findConnections(components);
 
   waitKey(0);
   return(0);

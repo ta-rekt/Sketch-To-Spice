@@ -18,20 +18,14 @@ void Circuit::printNetlist()
     file<<i->name<<" "<<i->leftNode<<" "<<i->rightNode<<" "<<i->value<<endl;
 
   file<<"*** SIMULATION COMMANDS ***"<<endl;
-  for (vector<string>::iterator i = simulationOptions.begin(); i != simulationOptions.end(); i++)
-  {
-    file<<i<<" ";
-    if(i == ".dc")
-      file<<simulationParameters<<endl;
-    cout<<endl;
-  }
-  
+  file<<".op"<<endl;
+
   file<<".end"<<endl;
 
   file.close();
 }
 
-void addSimulationOption(string opt)
-{
-  simulationOptions.push_back(opt);
-}
+// void addSimulationOption(string opt)
+// {
+//   simulationOptions.push_back(opt);
+// }
